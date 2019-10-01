@@ -9,7 +9,6 @@
 #'   x <- rnbinom(100,mu=mu,size=1/alpha)
 #'   mean(psibinneg1(mu,alpha,x))
 #' @return A real number
-#' @importFrom("stats", "dnbinom", "pnbinom")
 
 psibinneg1 <- function( mu, alpha, x) {
   facu <- stats::pnbinom( x, mu = mu, size = 1 / alpha)
@@ -27,7 +26,7 @@ psibinneg1 <- function( mu, alpha, x) {
 #'   x <- rnbinom(100,mu=mu,size=1/alpha)
 #'   mean(psibinneg2(mu,alpha,x))
 #' @return A real number
-#' @importFrom("stats", "dnbinom", "pnbinom")
+
 
 psibinneg2 <- function(mu, alpha, x) {
   facu <- stats::pnbinom(x, mu = mu, size = 1 / alpha)
@@ -61,8 +60,7 @@ score_mi_negbin <- function(par, x) {
 #'   MASS::fitdistr(x,dens="negative binomial")
 #'   rob_estimate_negbin(x)
 #' @return The estimated vector of parameters. The first entry is the mean and the second is the dispersion parameter, that equals 1/size.
-#' @importFrom("stats", "optim")
-#' @export
+
 rob_estimate_negbin <- function(x, start = NULL) {
   if (is.null(start)) {
     m_estim <- MASS::rlm(x ~ 1)

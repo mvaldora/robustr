@@ -5,7 +5,6 @@
 #'   rob_estimate_poisson(x)
 #'   fitdistr(x, dens="Poisson")
 #' @return The estimated parameter of the Poisson distribution
-#' @importFrom("stats", "uniroot")
 #' @export
 rob_estimate_poisson <- function(x) {
   phi_pois <- function(mu, y) {
@@ -50,7 +49,6 @@ rob_estimate_exp <- function(x) {
 #'   rob_estimate_geom(x)
 #'   fitdistr(x,dens="geometric")
 #' @return The estimated parameter of the Poisson distribution
-#' @importFrom("stats", "uniroot")
 #' @export
 rob_estimate_geom <- function(x) {
   phi_geom <- function(mu, y) {
