@@ -3,7 +3,7 @@
 #' @examples
 #'   x <- rpois(100,0.2)
 #'   rob_estimate_poisson(x)
-#'   fitdistr(x, dens="Poisson")
+#'   MASS::fitdistr(x, dens="Poisson")
 #' @return The estimated parameter of the Poisson distribution
 #' @export
 rob_estimate_poisson <- function(x) {
@@ -21,11 +21,11 @@ rob_estimate_poisson <- function(x) {
 }
 
 #' Computes a robust estimate of the parameter of an Exponential random variable.
-#' @param y A vector of univariate observations
+#' @param x A vector of univariate observations
 #' @examples
 #'   x <- rexp(50,2)
 #'   rob_estimate_exp(x)
-#'   fitdistr(x,dens="exponential")
+#'   MASS::fitdistr(x,dens="exponential")
 #' @return The estimated parameter of the exponential distribution
 #' @export
 rob_estimate_exp <- function(x) {
@@ -47,7 +47,7 @@ rob_estimate_exp <- function(x) {
 #' @examples
 #'   x <- rgeom(50,1/2)
 #'   rob_estimate_geom(x)
-#'   fitdistr(x,dens="geometric")
+#'   MASS::fitdistr(x,dens="geometric")
 #' @return The estimated parameter of the Poisson distribution
 #' @export
 rob_estimate_geom <- function(x) {

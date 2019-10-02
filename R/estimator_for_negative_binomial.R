@@ -1,4 +1,4 @@
-#' Computes the first entry of the score function of a MI-estimator for negative binomial distribution.
+#' Computes the first entry of the score function of an MI-estimator for negative binomial distribution.
 
 #' @param x A vector of univariate observations
 #' @param mu A possitive real number
@@ -7,7 +7,7 @@
 #'   mu <- 2
 #'   alpha <- 1
 #'   x <- rnbinom(100,mu=mu,size=1/alpha)
-#'   mean(psibinneg1(mu,alpha,x))
+#'   mean(robustr:::psibinneg1(mu,alpha,x))
 #' @return A real number
 
 psibinneg1 <- function( mu, alpha, x) {
@@ -24,7 +24,7 @@ psibinneg1 <- function( mu, alpha, x) {
 #'   mu <- 2
 #'   alpha <- 1
 #'   x <- rnbinom(100,mu=mu,size=1/alpha)
-#'   mean(psibinneg2(mu,alpha,x))
+#'   mean(robustr:::psibinneg2(mu,alpha,x))
 #' @return A real number
 
 
@@ -38,11 +38,6 @@ psibinneg2 <- function(mu, alpha, x) {
 #' Computes the score function of a MI-estimator for negative binomial distribution.
 #' @param par A two dimensional vector of parameters for negative binomial distribution. The first entry is the mean and the second is the dispertion parameter, that equals 1/size.
 #' @param x A vector of univariate observations
-#' @examples
-#'   mu <- 2
-#'   alpha <- 1
-#'   x <- rnbinom(100,mu=mu,size=1/alpha)
-#'   mean(psibinneg2(mu,alpha,x))
 #' @return A real number
 
 score_mi_negbin <- function(par, x) {
@@ -60,6 +55,7 @@ score_mi_negbin <- function(par, x) {
 #'   MASS::fitdistr(x,dens="negative binomial")
 #'   rob_estimate_negbin(x)
 #' @return The estimated vector of parameters. The first entry is the mean and the second is the dispersion parameter, that equals 1/size.
+#' @export
 
 rob_estimate_negbin <- function(x, start = NULL) {
   if (is.null(start)) {
