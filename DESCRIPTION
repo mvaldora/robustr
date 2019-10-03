@@ -1,0 +1,20 @@
+Package: robustr
+Type: Package
+Title: Computes Robust Estimators for Univariate Distributions
+Version: 0.0.1
+Authors@R: c(person("Marina", "Valdora", email = "mvaldora@dm.uba.ar", role = c("aut", "cre")), 
+          person("Victor", "Yohai", email = "vyohai@dm.uba.ar", role = c("aut")))
+Maintainer: Marina Valdora <mvaldora@dm.uba.ar>
+Description: Computes robust estimators for univariate distributions based on the probability
+             integral transformation.     
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    MASS,
+    stats
+Suggests: 
+    testthat
+Depends: R (>= 2.10) 
+RoxygenNote: 6.1.1
+
